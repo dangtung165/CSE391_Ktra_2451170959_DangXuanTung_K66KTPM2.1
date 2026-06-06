@@ -1,0 +1,253 @@
+:root {
+    --primary-purple: #7146f3;
+    --main-bg: #f8fafc;
+    --task-item-bg: #fdfdfd;
+    --border-color: #dde1e7;
+    --task-border-color: #f4f4f7;
+    --badge-gray: #e0e0e0;
+    --add-btn-bg: #8c8da7;
+    --check-empty-border: #f2f2f2;
+}
+
+body {
+    background-color: var(--main-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Container chính */
+.page-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Task List Card --- */
+.main-card {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.main-card .card-header {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.add-task-btn {
+    background-color: var(--primary-purple);
+    border-color: var(--primary-purple);
+    border-radius: 20px;
+    font-weight: 600;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.add-task-btn:hover {
+    background-color: #5a3bc2;
+    border-color: #5a3bc2;
+}
+
+.main-card .card-body {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+/* Task Item Styling */
+.task-list {
+    margin-bottom: 0;
+}
+
+.task-item {
+    background-color: var(--task-item-bg);
+    border: 2px solid var(--task-border-color) !important;
+    border-radius: 30px !important;
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+}
+.task-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Các cột thông tin bên trong task */
+.task-detail-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.task-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    margin-bottom: 0.1rem;
+}
+
+.task-name {
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #4a4a4a;
+}
+
+.priority-text {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.status-badge {
+    background-color: var(--badge-gray) !important;
+    color: #8c8c8c !important;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.4em 0.8em;
+    margin-top: 0.6rem;
+}
+
+/* Vòng tròn tiến độ / checkbox tùy chỉnh */
+.status-check-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.check-empty {
+    border: 2px solid var(--check-empty-border);
+    background-color: #fff;
+}
+
+.check-done {
+    border: 2px solid var(--primary-purple);
+    background-color: #fff;
+}
+
+/* Tạo vòng tròn khuyết bằng conic-gradient */
+.check-progress {
+    border: 2px solid transparent;
+    background-image: conic-gradient(
+        var(--primary-purple) 0%,
+        var(--primary-purple) 60%,
+        var(--check-empty-border) 60%,
+        var(--check-empty-border) 100%
+    );
+}
+
+/* Các nút hành động */
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.edit-icon {
+    color: #b0b0b0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.edit-icon:hover {
+    color: #888;
+}
+.delete-icon {
+    color: #dc3545;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.delete-icon:hover {
+    color: #c82333;
+}
+
+/* --- Add Task Popup --- */
+.add-task-card {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #fff;
+    position: relative;
+}
+
+.add-task-card .card-header {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    border-bottom: none;
+    padding: 1.25rem 1rem 0.5rem 1rem;
+}
+
+.add-task-card .card-body {
+    padding: 0.5rem 1rem;
+}
+
+.add-task-card .btn-close-custom {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.add-task-card .form-control {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.6rem;
+    color: #8c8c8c;
+}
+.add-task-card .form-control::placeholder {
+    color: #d0d0d0;
+}
+
+/* Thiết kế cho nhóm nút chọn Priority */
+.priority-buttons .btn {
+    border-radius: 20px;
+    font-weight: 600;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-right: 0.5rem;
+}
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-outline-warning-custom {
+    color: #f7b11d;
+    border-color: #f7b11d;
+}
+.priority-buttons .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.add-task-card .card-footer {
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    border-top: none;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.add-btn {
+    background-color: var(--add-btn-bg);
+    border-color: var(--add-btn-bg);
+    border-radius: 10px;
+    font-weight: 600;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #fff;
+}
+.add-btn:hover {
+    background-color: #767894;
+    border-color: #767894;
+}
+
+/* Phân chia layout dạng lưới cho các phần tử */
+.task-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+}
